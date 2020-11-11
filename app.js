@@ -1,15 +1,12 @@
 const express = require('express');
 const app = express();
-const bodyParser = require('body-parser');
-
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended:true}))
-
+ const bodyParser = require('body-parser');
 
 const database = require("./services/database");
-const BookRouter = require("./routes/books");
+const BookRouter = require("./routes/bookRoutes");
 
-app.use(express.json());
+app.use(bodyParser.json());
+
 app.use(BookRouter);
 database.connect();
 

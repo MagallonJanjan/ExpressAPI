@@ -1,6 +1,6 @@
 const { request, response } = require("express");
-const {replaceOne, update} = require("../models/Books");
-const BookLibrary = require("../models/Books");
+const {replaceOne, update} = require("../models/BookModel");
+const BookLibrary = require("../models/BookModel");
 const parseRequestBody = require("../utils/parseRequestBody");
 
 const getBooks = async (request, response) =>{
@@ -77,7 +77,7 @@ const updateBook  = async(request,  response) =>{
         );
         if (!result) {
             return response.status(404).json({
-                error: "Error in updating movie!",
+                error: "Error in updating book!",
             })
         }
         response.status(200).json({
@@ -99,7 +99,7 @@ const deleteBook = async(request,response) => {
                 });
         }
         response.status(200).json({
-            message: "Successfully deleted movie",
+            message: "Successfully deleted book",
             result: result,
             });
         });
@@ -110,6 +110,7 @@ const deleteBook = async(request,response) => {
             });
     }
 }
+
 
 module.exports = {
     addBook,
