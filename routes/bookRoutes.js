@@ -3,11 +3,11 @@ const router = express.Router();
 const Book = require('../controller/bookstoreController') 
 
 
-router.post('/api/bookstore', Book.addBook);
-router.get('/api/bookstore/books', Book.getBooks);
-router.get('/api/bookstore/books/:id', Book.getBookById);
-router.patch('/api/bookstore/:id', Book.updateBook);
-router.delete('/api/bookstore/:id', Book.deleteBook)
+router.post('/', Book.addBook);
+router.get('/books', Book.getBooks);
+router.get('/books/:id', Book.getBookById);
+router.patch('/:id', Book.updateBook);
+router.delete('/:id', Book.deleteBook)
 
 
 module.exports = router;

@@ -7,7 +7,7 @@ const BookRouter = require("./routes/bookRoutes");
 
 app.use(bodyParser.json());
 
-app.use(BookRouter);
+app.use('/api/bookstore',BookRouter);
 database.connect();
 
 app.listen(8000, console.log("The server is running on port 8000"));
